@@ -12,9 +12,10 @@ import { environment } from 'src/environments/environment';
 import { MsAdalAngular6Module } from 'microsoft-adal-angular6';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FirebaseAuthInterceptor } from './fbauth/firebase/firebase-auth.interceptor';
+import { LoginSplashComponent } from './login-splash/login-splash.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, LoginSplashComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

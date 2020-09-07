@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  authEnabled: false,
+  authEnabled: true,
   title: 'ngSecurity',
   markdownPath: '/assets/markdown/',
   api: 'http://localhost:3000/',

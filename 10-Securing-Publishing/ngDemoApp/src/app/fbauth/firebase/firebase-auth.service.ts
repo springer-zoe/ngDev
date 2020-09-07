@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { LoginCredentials } from './credential.model';
+import { environment } from '../../../environments/environment';
 @Injectable({
   providedIn: 'root',
 })
@@ -38,10 +39,10 @@ export class FirebaseAuthService {
 
   isAuthenticated(): Observable<boolean> {
     this.User.subscribe((user) => {
-      const auth: boolean = user == null ? false : true;
-      return of(auth);
+      return user != null ? of(true) : of(false);
     });
-    return of(false);
+    const loggedIn = !environment.authEnabled;
+    return of(loggedIn);
   }
 
   registerUser(

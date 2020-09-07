@@ -1,4 +1,4 @@
-@import "stylevars.scss";
+@import 'stylevars.scss';
 
 .grid {
   height: 100vh;
@@ -8,4 +8,8 @@
 .footer,
 .sidemenu {
   background: $light-col;
+}
+
+.login {
+  height: 100vh;
 }
