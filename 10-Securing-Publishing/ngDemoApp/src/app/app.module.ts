@@ -12,10 +12,10 @@ import { environment } from 'src/environments/environment';
 import { MsAdalAngular6Module } from 'microsoft-adal-angular6';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FirebaseAuthInterceptor } from './fbauth/firebase/firebase-auth.interceptor';
-import { LoginSplashComponent } from './login-splash/login-splash.component';
+import { FBAuthModule } from './fbauth/fbauth.module';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginSplashComponent],
+  declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,6 +23,7 @@ import { LoginSplashComponent } from './login-splash/login-splash.component';
     MaterialModule,
     HttpClientModule,
     SharedModule,
+    FBAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     MsAdalAngular6Module.forRoot(environment.o365Config),

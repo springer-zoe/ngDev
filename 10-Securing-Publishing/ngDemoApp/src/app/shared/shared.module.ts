@@ -9,12 +9,14 @@ import { FooterComponent } from './footer/footer.component';
 import { MarkdownRendererComponent } from './markdown-renderer/markdown-renderer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidePanelComponent } from './side-panel/side-panel.component';
+import { LoginSplashComponent } from './login-splash/login-splash.component';
 
 const mods = [
   NavbarComponent,
   SidePanelComponent,
   FooterComponent,
   MarkdownRendererComponent,
+  LoginSplashComponent,
 ];
 
 @NgModule({
