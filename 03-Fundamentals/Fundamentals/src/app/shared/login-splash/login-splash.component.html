@@ -8,8 +8,22 @@
     <div *ngSwitchCase="'entry'" class="switch">
       <img matCardImage src="{{ entryPic }}" />
     </div>
-    <div *ngSwitchCase="'login'" class="switch">Login Form</div>
-    <div *ngSwitchCase="'register'" class="switch">Register Form</div>
+    <div
+      *ngSwitchCase="'login'"
+      class="switch"
+      fxLayout="column"
+      fxLayoutAlign="center center"
+    >
+      Login Form
+    </div>
+    <div
+      *ngSwitchCase="'register'"
+      class="switch"
+      fxLayout="column"
+      fxLayoutAlign="center center"
+    >
+      Register Form
+    </div>
   </ng-container>
 </mat-card>
 

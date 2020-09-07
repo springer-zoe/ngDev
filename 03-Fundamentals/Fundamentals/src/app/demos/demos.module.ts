@@ -35,6 +35,7 @@ import { SplitPopupComponent } from './samples/content-projection/split-popup/sp
 import { LifecycleComponent } from './samples/lifecycle/lifecycle.component';
 import { LifecycleChildComponent } from './samples/lifecycle-child/lifecycle-child.component';
 import { NgTemplateComponent } from './samples/ng-template/ng-template.component';
+import { SharedModule } from '../shared/shared.module';
 
 const demoRoutes: Routes = [
   {
@@ -99,6 +100,7 @@ const demoRoutes: Routes = [
     RouterModule.forChild(demoRoutes),
     MaterialModule,
     HttpClientModule,
+    SharedModule,
   ],
   providers: [DemoService, VouchersService, PersonService],
 })

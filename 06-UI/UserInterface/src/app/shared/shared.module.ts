@@ -10,6 +10,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { MarkdownModule } from 'ngx-markdown';
 import { HttpClient } from '@angular/common/http';
 import { MarkdownRendererComponent } from './markdown-renderer/markdown-renderer.component';
+import { LoginSplashComponent } from './login-splash/login-splash.component';
 
 const mods = [
   NavbarComponent,
@@ -17,6 +18,7 @@ const mods = [
   FooterComponent,
   PageNotFoundComponent,
   MarkdownRendererComponent,
+  LoginSplashComponent,
 ];
 
 @NgModule({
