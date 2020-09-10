@@ -1,4 +1,4 @@
-<form [formGroup]="loginForm" (ngSubmit)="logIn(loginForm)">
+<form [formGroup]="loginForm" (ngSubmit)="logIn(loginForm.value)">
   <div fxLayout="column">
     <mat-form-field>
       <input

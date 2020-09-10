@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   constructor(private titleService: Title, private auth: FirebaseAuthService) {}
 
   title: string = environment.title;
+
   loggedIn$ = this.auth
     .isAuthenticated()
     .pipe(tap((loggedin) => console.log('logged in', loggedin)));

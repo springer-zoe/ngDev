@@ -6,7 +6,7 @@
   gdColumns="auto 80px"
   gdColumns.lt-md="100%"
   class="grid"
-  *ngIf="loggedIn$ | async"
+  *ngIf="(loggedIn$ | async) == true"
 >
   <div gdArea="navbar" class="navbar">
     <app-navbar></app-navbar>

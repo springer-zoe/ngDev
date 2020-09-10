@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
+import * as firebase from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { LoginCredentials } from './credential.model';
 import { environment } from '../../../environments/environment';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -45,10 +47,7 @@ export class FirebaseAuthService {
     return of(loggedIn);
   }
 
-  registerUser(
-    email: string,
-    password: string
-  ): Promise<firebase.auth.UserCredential> {
+  registerUser(email: string, password: string) {
     return this.fireAuth
       .createUserWithEmailAndPassword(email, password)
       .catch((err) => {
@@ -58,12 +57,10 @@ export class FirebaseAuthService {
   }
 
   logOn(loginvm: LoginCredentials): Promise<firebase.auth.UserCredential> {
-    return this.fireAuth
-      .signInWithEmailAndPassword(loginvm.email, loginvm.pwd)
-      .catch((err) => {
-        console.log('Error logging in', err);
-        return err;
-      });
+    return this.fireAuth.signInWithEmailAndPassword(
+      loginvm.email,
+      loginvm.password
+    );
   }
 
   logOff() {
