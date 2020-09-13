@@ -1,7 +1,7 @@
 export const environment = {
   production: false,
-  authEnabled: true,
-  title: 'ngSecurity',
+  authEnabled: false,
+  title: 'Security & Publishing',
   markdownPath: '/assets/markdown/',
   api: 'http://localhost:3000/',
   firebaseConfig: {

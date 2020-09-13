@@ -48,27 +48,34 @@ export class FirebaseAuthService {
   }
 
   registerUser(email: string, password: string) {
-    return this.fireAuth
-      .createUserWithEmailAndPassword(email, password)
-      .catch((err) => {
-        console.log('Error logging in', err);
-        return err;
+    return firebase
+      .auth()
+      .setPersistence(firebase.auth.Auth.Persistence.SESSION)
+      .then(() => {
+        return this.fireAuth
+          .createUserWithEmailAndPassword(email, password)
+          .catch((err) => {
+            console.log('Error logging in', err);
+            return err;
+          });
       });
   }
 
   logOn(loginvm: LoginCredentials): Promise<firebase.auth.UserCredential> {
-    return this.fireAuth.signInWithEmailAndPassword(
-      loginvm.email,
-      loginvm.password
-    );
+    return firebase
+      .auth()
+      .setPersistence(firebase.auth.Auth.Persistence.SESSION)
+      .then(() => {
+        return this.fireAuth.signInWithEmailAndPassword(
+          loginvm.email,
+          loginvm.password
+        );
+      });
   }
 
-  logOff() {
-    this.fireAuth
-      .signOut()
-      .then(() => {
-        this.fbUser = null;
-      })
-      .catch((err) => console.log('Error logging out', err));
+  logOff(): Promise<void> {
+    return this.fireAuth.signOut().then(() => {
+      this.fbUser = null;
+    });
   }
 }
