@@ -24,8 +24,8 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  logIn(cred: LoginCredentials) {
-    this.as.logOn(cred).then(
+  logIn(form: FormGroup) {
+    this.as.logOn(form.value).then(
       (result) => {
         console.log('logged in', result);
       },
