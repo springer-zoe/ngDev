@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FirebaseAuthService } from '../../firebase-auth.service';
+import { FirebaseAuthService } from '../../firebase.auth.service';
 import { SnackbarService } from '../../../../shared/snackbar/snackbar.service';
 
 @Component({

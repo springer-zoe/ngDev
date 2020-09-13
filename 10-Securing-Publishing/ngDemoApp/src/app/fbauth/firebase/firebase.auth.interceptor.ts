@@ -5,7 +5,7 @@ import {
   HttpInterceptor,
   HttpRequest,
 } from '@angular/common/http';
-import { FirebaseAuthService } from './firebase-auth.service';
+import { FirebaseAuthService } from './firebase.auth.service';
 import { Inject, forwardRef, Injectable } from '@angular/core';
 
 @Injectable()

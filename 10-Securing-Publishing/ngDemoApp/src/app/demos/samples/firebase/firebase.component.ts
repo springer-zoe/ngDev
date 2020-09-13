@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FirebaseAuthService } from '../../../fbauth/firebase/firebase-auth.service';
+import { FirebaseAuthService } from '../../../fbauth/firebase/firebase.auth.service';
 
 @Component({
   selector: 'app-firebase',
