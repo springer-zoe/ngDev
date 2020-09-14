@@ -1,5 +1,5 @@
 <div class="container">
   <h3>This is the food:</h3>
   <!--div *ngFor="let f of foodItems">{{ f.name }}</div-->
-  <div *ngFor="let f of food | async">{{ f.name }}</div>
+  <div *ngFor="let f of food | async">{{ f.name }}: {{ f.price }} €</div>
 </div>
