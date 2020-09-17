@@ -1,1 +1,7 @@
-<p>sidebar works!</p>
+<mat-toolbar class="nav" color="accent">
+  <ul class="sidebar-menu">
+    <li class="navItem" *ngFor="let item of items">
+      <a href="{{ item.url }}">{{ item.title }}</a>
+    </li>
+  </ul>
+</mat-toolbar>

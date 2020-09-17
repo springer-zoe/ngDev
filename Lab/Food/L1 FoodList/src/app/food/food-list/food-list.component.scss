@@ -1,0 +1,26 @@
+thead {
+  background-color: grey;
+}
+
+th {
+  font-weight: bold;
+}
+
+td,
+th {
+  text-align: left;
+  font-size: 1rem;
+}
+
+td:last-child {
+  text-align: right;
+}
+
+button {
+  font-size: 1rem;
+  margin-left: 0.75rem;
+}
+
+table {
+  width: 100%;
+}

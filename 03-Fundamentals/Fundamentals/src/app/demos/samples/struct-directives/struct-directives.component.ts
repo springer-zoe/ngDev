@@ -34,6 +34,10 @@ export class StructDirectivesComponent implements OnInit {
       `navigating to voucher with text "${v.Text}" - covered later in more detail`
     );
   }
+
+  switchSouth() {
+    this.currentDirection = DirectionEnum.South;
+  }
 }
 
 export enum DirectionEnum {

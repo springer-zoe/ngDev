@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Title } from '@angular/platform-browser';
 
@@ -6,6 +6,7 @@ import { Title } from '@angular/platform-browser';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  //encapsulation: ViewEncapsulation.ShadowDom, // schaltet das globale Styling aus, weil die Vererbung verhindert wird
 })
 export class AppComponent implements OnInit {
   constructor(private titleService: Title) {}

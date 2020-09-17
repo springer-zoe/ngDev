@@ -1,3 +1,8 @@
-<div class="nav">
-  <div class="navItem" *ngFor="let item of items">{{ item.title }}</div>
-</div>
+<mat-toolbar class="nav" color="primary">
+  <span>My Food App</span>
+  <ul class="main-menu">
+    <li class="navItem" *ngFor="let item of items">
+      <a href="{{ item.url }}">{{ item.title }}</a>
+    </li>
+  </ul>
+</mat-toolbar>

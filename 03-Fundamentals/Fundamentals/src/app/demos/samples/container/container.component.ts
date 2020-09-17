@@ -21,7 +21,7 @@ export class ContainerComponent implements OnInit {
 
   onPersonSelected(p: Person) {
     // this.current = p;
-    this.current = { ...p };
+    this.current = { ...p }; // erzeugt eine Kopie, deshalb wird die echte Person erst nach dem Save überschrieben
     // this.current = Object.assign({},p)
   }
 

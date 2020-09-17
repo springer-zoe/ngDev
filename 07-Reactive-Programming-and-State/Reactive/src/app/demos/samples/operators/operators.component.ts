@@ -13,6 +13,7 @@ import { isArray } from 'util';
 import { Voucher } from '../model';
 import { VouchersService } from '../voucher.service';
 import { DoublerService } from './doubler.service';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-operators',
@@ -62,6 +63,16 @@ export class OperatorsComponent implements OnInit {
         map((va) => va.map(this.setLabel))
       )
       .subscribe((data) => this.log('use pipe(), map() & tap()', data));
+
+    from([2, 10, 20])
+      .pipe(
+        tap((i) => {
+          console.log('tap before: ', i);
+          i = i * 2;
+          console.log('tap after: ', i);
+        })
+      )
+      .subscribe((item) => console.log(item));
   }
 
   errHandling() {
@@ -81,14 +92,14 @@ export class OperatorsComponent implements OnInit {
   useFind() {
     this.vs
       .getVouchers()
-      .pipe(map((v) => v.find((v: Voucher) => v.ID == 3)))
+      .pipe(map((arr) => arr.find((v: Voucher) => v.ID == 3)))
       .subscribe((data) => this.log('getByID - using find()', data));
   }
 
   useFilter() {
     this.vs
       .getVouchers()
-      .pipe(map((v) => v.filter((v: Voucher) => v.Paid)))
+      .pipe(map((arr) => arr.filter((v: Voucher) => v.Paid)))
       .subscribe((data) => this.log('useFilter', data));
   }
 

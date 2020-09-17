@@ -1,15 +1,91 @@
-<div>
-  <div>
-    <label>Name</label>
-    <input type="text" [(ngModel)]="food.name" />
+<!--div class="edit-form">
+  <div class="edit-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" [(ngModel)]="food.name" />
+    </mat-form-field>
   </div>
-  <div>
-    <label>Price</label>
-    <input type="number" [(ngModel)]="food.price" />
+  <div class="edit-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Price</mat-label>
+      <input matInput type="text" [(ngModel)]="food.price" />
+      <span matPrefix>$&nbsp;</span>
+      <span matSuffix>.00</span>
+    </mat-form-field>
   </div>
-  <div>
-    <label>Calories</label>
-    <input type="number" [(ngModel)]="food.calories" />
+  <div class="edit-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Calories</mat-label>
+      <input matInput type="number" [(ngModel)]="food.calories" />
+    </mat-form-field>
   </div>
-</div>
-<a (onlick)="doSave()">Save</a>
+  <button mat-raised-button (click)="doSave()" color="accent">Save</button>
+  <button mat-raised-button (click)="doCancel()" color="accent">Cancel</button>
+</div-->
+
+<form
+  [formGroup]="form"
+  (ngSubmit)="saveForm(form)"
+  novalidate
+  class="edit-form"
+>
+  <div class="edit-row">
+    <mat-form-field>
+      <input matInput type="text" placeholder="Name" formControlName="name" />
+    </mat-form-field>
+    <mat-error
+      *ngIf="
+        form.controls['name'].touched &&
+        form.controls['name'].errors != undefined
+      "
+    >
+      Name is required and must be more than 2 characters
+    </mat-error>
+  </div>
+  <div class="edit-row">
+    <mat-form-field>
+      <input
+        matInput
+        type="number"
+        placeholder="Price"
+        formControlName="price"
+      />
+    </mat-form-field>
+    <mat-error
+      *ngIf="
+        form.controls['price'].touched &&
+        form.controls['price'].errors != undefined
+      "
+    >
+      Price is required and must be at least $0.00
+    </mat-error>
+  </div>
+  <div class="edit-row">
+    <mat-form-field>
+      <input
+        matInput
+        type="number"
+        placeholder="Calories"
+        formControlName="calories"
+      />
+    </mat-form-field>
+    <mat-error
+      *ngIf="
+        form.controls['calories'].touched &&
+        form.controls['calories'].errors != undefined
+      "
+    >
+      Calories must be at least 0
+    </mat-error>
+  </div>
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="form.valid == false"
+  >
+    Save
+  </button>
+  <button mat-raised-button (click)="doCancel()" color="accent">Cancel</button>
+  <!--button mat-raised-button (click)="doSave()" color="accent">Save</button-->
+</form>

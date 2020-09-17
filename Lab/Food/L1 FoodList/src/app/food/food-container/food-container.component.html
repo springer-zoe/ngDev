@@ -1,10 +1,18 @@
+<h1>My Food</h1>
+
 <app-food-list
   [food]="food"
   (foodSelected)="selectFood($event)"
+  (foodDeleted)="deleteFood($event)"
 ></app-food-list>
 
 <app-food-edit
   *ngIf="selected"
   [food]="selected"
   (saveFood)="foodSaved($event)"
+  (cancel)="closeEditForm()"
 ></app-food-edit>
+
+<button mat-raised-button (click)="createFood()" color="primary">
+  <span class="material-icons"> add </span>
+</button>

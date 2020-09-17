@@ -13,6 +13,7 @@ import { SkillsEditComponent } from './skills/skills-edit/skills-edit.component'
 import { SkillsListComponent } from './skills/skills-list/skills-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgxUploaderModule } from 'ngx-uploader';
 
 registerLocaleData(localeDe);
 
@@ -32,6 +33,7 @@ registerLocaleData(localeDe);
     FormsModule,
     MaterialModule,
     SharedModule,
+    NgxUploaderModule,
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'de' }],
   bootstrap: [AppComponent],

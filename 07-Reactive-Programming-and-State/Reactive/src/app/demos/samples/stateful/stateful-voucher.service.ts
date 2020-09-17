@@ -13,6 +13,7 @@ import { lateVoucher } from '../late-voucher';
 export class StatefulVoucherService {
   constructor(private httpClient: HttpClient) {
     this.initData();
+    this.addLateVoucher();
   }
 
   private vouchersArray: Voucher[] = [];
@@ -33,7 +34,7 @@ export class StatefulVoucherService {
     setTimeout(() => {
       this.vouchersArray.push(lateVoucher as Voucher);
       this.vouchers.next(this.vouchersArray);
-    }, 8000);
+    }, 4000);
   }
 
   getAllVouchers(): Observable<Voucher[]> {
